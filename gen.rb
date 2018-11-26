@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # -*- encoding : utf-8 -*-
 #
 #          DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE

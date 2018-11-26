@@ -2,7 +2,7 @@
 https://github.com/PrusaOwners/prusaowners/wiki/Bed_Leveling_without_Wave_Springs
 
 Following that tutorial and because I didn't want to update my firmware only to have relative numbers, I made a script to convert the output from Marlin to the relative numbers you need.  
-Script takes a file as parameter with g81 output, like that:
+Script takes a file as parameter with G81 output, like that:
 
 ```
 Recv:   0.16500  0.18463  0.19991  0.21083  0.21741  0.21963  0.21750

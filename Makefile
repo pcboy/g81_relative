@@ -1,7 +1,7 @@
 all: g81_relative.js dist
 
 dist:
-	parcel index.html
+	parcel build index.html --public-url ./
 
 g81_relative.js:
 	gem install opal

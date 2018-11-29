@@ -24,3 +24,5 @@ $> ruby gen.rb output.txt
 ```
 
 You get the proper output relative to the center.
+
+You can also access the converter directly online by going to: https://ptrace.su/g81_relative/

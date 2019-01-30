@@ -18,12 +18,15 @@
 class G81Relative
   def self.convertDistanceToFractionalTurns(distance)
     screw_pitch = 0.5
-    return Rational(distance/screw_pitch).round(+1)
+    rat = Rational(distance/screw_pitch).round(1)
+    rat == 0/1 ? 0 : rat
   end
+
   def self.convertDistanceToDegrees(distance)
     screw_pitch = 0.5
-    return "#{(distance/screw_pitch*360).round}"+"°"
+    "#{(distance/screw_pitch*360).round}°"
   end
+
   def self.g81_relative(content)
     points = content.lines.select{|x| x =~ /Recv:/}.join("\n").gsub(/Recv:\s/, '').split(' ').map(&:to_f)
 
@@ -32,21 +35,18 @@ class G81Relative
       middle_right, bottom_left,
       bottom_center, bottom_right = points.values_at(0,3,6,21,27,42,45,48).map{|x| (x - center).round(2)}
 
-
-    puts "Raw Values:"
-    puts %Q{
-          #{top_left}\t#{top_middle}\t#{top_right}
-          #{middle_left}\t0\t#{middle_right}
-          #{bottom_left}\t#{bottom_center}\t#{bottom_right}
-        }
-    puts "Degrees:"
-    puts %Q{
+    %Q{
+      Raw values:
+      #{top_left}\t#{top_middle}\t#{top_right}
+      #{middle_left}\t0\t#{middle_right}
+      #{bottom_left}\t#{bottom_center}\t#{bottom_right}
+      
+      Degrees:
       #{convertDistanceToDegrees(top_left)}\t#{convertDistanceToDegrees(top_middle)}\t#{convertDistanceToDegrees(top_right)}
       #{convertDistanceToDegrees(middle_left)}\t0\t#{convertDistanceToDegrees(middle_right)}
       #{convertDistanceToDegrees(bottom_left)}\t#{convertDistanceToDegrees(bottom_center)}\t#{convertDistanceToDegrees(bottom_right)}
-    }
-    puts "Fractional Turns:"
-    %Q{
+
+      Fractional Turns:
       #{convertDistanceToFractionalTurns(top_left)}\t#{convertDistanceToFractionalTurns(top_middle)}\t#{convertDistanceToFractionalTurns(top_right)}
       #{convertDistanceToFractionalTurns(middle_left)}\t0\t#{convertDistanceToFractionalTurns(middle_right)}
       #{convertDistanceToFractionalTurns(bottom_left)}\t#{convertDistanceToFractionalTurns(bottom_center)}\t#{convertDistanceToFractionalTurns(bottom_right)}

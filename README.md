@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/pcboy/g81_relative.svg?branch=master)](https://travis-ci.com/pcboy/g81_relative)
 
 https://github.com/PrusaOwners/prusaowners/wiki/Bed_Leveling_without_Wave_Springs
 

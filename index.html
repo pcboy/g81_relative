@@ -1,11 +1,11 @@
-<html> <head> <script type="text/javascript" src="g81_relative.48a88499.js"></script> <meta name="viewport" content="width=device-width, initial-scale=1"> <style>.container a{margin-bottom:1rem}textarea{margin-bottom:2rem;height:40%;width:90%}#result{margin-top:2rem}.container{display:flex;flex-direction:column}</style> </head> <body> <h1>Convert g81 absolute values to relative ones.</h1> <div class="container"> <a href="https://github.com/pcboy/g81_relative">See https://github.com/pcboy/g81_relative for more info</a> <textarea id="convert" placeholder="Recv:   0.16500  0.18463  0.19991  0.21083  0.21741  0.21963  0.21750
+<html> <head> <meta charset="utf-8"> <script type="text/javascript" src="g81_relative.82527e40.js"></script> <style>textarea{margin-bottom:2rem;height:40%;width:90%}#result{margin-top:2rem}.container{display:flex;flex-direction:column}.container a{margin-bottom:1rem}</style> </head> <body> <h1>Convert g81 absolute values to relative ones.</h1> <div class="container"> <a href="https://github.com/pcboy/g81_relative">See https://github.com/pcboy/g81_relative for more info</a> <textarea id="convert" placeholder="Recv:   0.16500  0.18463  0.19991  0.21083  0.21741  0.21963  0.21750
 Recv:   0.16046  0.18181  0.20058  0.21676  0.23036  0.24138  0.24981
 Recv:   0.15630  0.18067  0.20295  0.22315  0.24126  0.25727  0.27120
 Recv:   0.15250  0.18120  0.20704  0.23000  0.25009  0.26731  0.28167
 Recv:   0.14907  0.18342  0.21283  0.23731  0.25687  0.27150  0.28120
 Recv:   0.14602  0.18730  0.22033  0.24509  0.26159  0.26984  0.26981
 Recv:   0.14333  0.19287  0.22954  0.25333  0.26426  0.26231  0.24750
-"></textarea> Results: <textarea id="result" placeholder="      -0.065	-0.019	-0.013
-      -0.078	0	0.052
-      -0.087	0.023	0.017
+"></textarea> Results: <textarea id="result" placeholder="      -0.065 -0.019  -0.013
+      -0.078  0 0.052
+      -0.087  0.023 0.017
 " readonly></textarea> </div> </body> <script>document.body.onload=function(){document.getElementById("convert").addEventListener("keyup",function(){document.getElementById("result").innerHTML=Opal.G81Relative.$g81_relative(document.getElementById("convert").value)})};</script> </html>

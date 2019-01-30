@@ -17,12 +17,22 @@ Recv:   0.14333  0.19287  0.22954  0.25333  0.26426  0.26231  0.24750
 Then when you do:
 ```
 $> ruby gen.rb output.txt
-  -0.065	-0.019	-0.013
-  -0.078	0	0.052
-  -0.087	0.023	0.017
 
+      Raw values:
+      -0.07	-0.02	-0.01
+      -0.08	0	0.05
+      -0.09	0.02	0.02
+
+      Degrees:
+      -50°	-14°	-7°
+      -58°	0	36°
+      -65°	14°	14°
+
+      Fractional Turns:
+      -1/10	0	0
+      -1/5	0	1/10
+      -1/5	0	0
 ```
 
-You get the proper output relative to the center.
-
+You get the proper output relative to the center. You also get the degrees and fractional turns from the correct position for each screw.  
 You can also access the converter directly online by going to: https://pcboy.github.io/g81_relative/

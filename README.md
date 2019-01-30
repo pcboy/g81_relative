@@ -37,3 +37,7 @@ $> ruby gen.rb output.txt
 
 You get the proper output relative to the center. You also get the degrees and fractional turns from the correct position for each screw.  
 You can also access the converter directly online by going to: https://pcboy.github.io/g81_relative/
+
+# Contributors
+
+[chrisbcole](https://github.com/chrisbcole) for the degrees/fractional turns output

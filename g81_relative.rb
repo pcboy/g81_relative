@@ -28,7 +28,7 @@ class G81Relative
   end
 
   def self.g81_relative(content)
-    points = content.lines.select{|x| x =~ /Recv:/}.join("\n").gsub(/Recv:\s/, '').split(' ').map(&:to_f)
+    points = content.scan(/\d.\d+/).map(&:to_f)
 
     center = points[24]
     top_left, top_middle, top_right, middle_left,

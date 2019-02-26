@@ -19,12 +19,14 @@ class G81Relative
   def self.convertDistanceToFractionalTurns(distance)
     screw_pitch = 0.5
     rat = Rational(distance/screw_pitch).round(1)
-    rat == 0/1 ? 0 : rat
+    rat = rat == 0/1 ? 0 : rat
+    "#{rat.abs}#{rat > 0 ? 'CCW' : 'CW'}"
   end
 
   def self.convertDistanceToDegrees(distance)
     screw_pitch = 0.5
-    "#{(distance/screw_pitch*360).round}°"
+    deg = (distance/screw_pitch*360).round
+    "#{deg.abs}°#{deg > 0 ? 'CCW' : 'CW'}"
   end
 
   def self.g81_relative(content)

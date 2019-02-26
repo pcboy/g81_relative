@@ -23,19 +23,20 @@ $> ruby gen.rb output.txt
       -0.07	-0.02	-0.01
       -0.08	0	0.05
       -0.09	0.02	0.02
-
+      
       Degrees:
-      -50°	-14°	-7°
-      -58°	0	36°
-      -65°	14°	14°
+      50°CW	14°CW	7°CW
+      58°CW	0	36°CCW
+      65°CW	14°CCW	14°CCW
 
       Fractional Turns:
-      -1/10	0	0
-      -1/5	0	1/10
-      -1/5	0	0
+      1/10CW	0CW	0CW
+      1/5CW	0	1/10CCW
+      1/5CW	0CW	0CW
 ```
 
 You get the proper output relative to the center. You also get the degrees and fractional turns from the correct position for each screw.  
+In the current example you should turn the upper left screw 50° clockwise.  
 You can also access the converter directly online by going to: https://pcboy.github.io/g81_relative/
 
 # Contributors

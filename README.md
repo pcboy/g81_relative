@@ -23,16 +23,16 @@ $> ruby gen.rb output.txt
       -0.07	-0.02	-0.01
       -0.08	0	0.05
       -0.09	0.02	0.02
-      
+
       Degrees:
-      50°CW	14°CW	7°CW
-      58°CW	0	36°CCW
-      65°CW	14°CCW	14°CCW
+      50°CCW	14°CCW	7°CCW
+      58°CCW	0	36°CW
+      65°CCW	14°CW	14°CW
 
       Fractional Turns:
-      1/10CW	0CW	0CW
-      1/5CW	0	1/10CCW
-      1/5CW	0CW	0CW
+      1/10CCW	0CCW	0CCW
+      1/5CCW	0	1/10CW
+      1/5CCW	0CCW	0CCW
 ```
 
 You get the proper output relative to the center. You also get the degrees and fractional turns from the correct position for each screw.  

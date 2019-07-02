@@ -40,6 +40,7 @@ Recv:   0.14602  0.18730  0.22033  0.24509  0.26159  0.26984  0.26981
 Recv:   0.14333  0.19287  0.22954  0.25333  0.26426  0.26231  0.24750
 "></textarea>
     Results:
+    <div id="last-update"></div>
     <textarea id="result" placeholder="      -0.065 -0.019  -0.013
       -0.078  0 0.052
       -0.087  0.023 0.017
@@ -48,8 +49,18 @@ Recv:   0.14333  0.19287  0.22954  0.25333  0.26426  0.26231  0.24750
 </body>
   <script>
     document.body.onload = function() {
-      document.getElementById("convert").addEventListener("keyup", function() {
-        document.getElementById("result").innerHTML = Opal.G81Relative.$g81_relative(document.getElementById("convert").value);
+      let convert = document.getElementById("convert")
+      let result = document.getElementById("result")
+      let lastUpdate = document.getElementById("last-update")
+      convert.value = ''
+      result.value = ''
+      convert.addEventListener("keyup", function() {
+        try {
+          result.value = Opal.G81Relative.$g81_relative(document.getElementById("convert").value);
+        } catch(err) {
+          result.value = "error"
+        }
+        lastUpdate.innerHTML = "Last Update: " + new Date().toLocaleTimeString('en-US', { hour12: false,  hour: "numeric", minute: "numeric", second: "numeric"});
       })
     }
   </script>

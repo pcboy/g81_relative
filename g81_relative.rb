@@ -25,8 +25,12 @@ class G81Relative
 
   def self.convert_distance_to_degrees(distance)
     screw_pitch = 0.5
-    deg = (distance/screw_pitch*360).round
-    "#{deg.abs}°#{deg > 0 ? 'CW' : 'CCW'}"
+    deg = (distance / screw_pitch * 360).round
+    "#{deg.abs}°#{deg > 0 ? "CW" : "CCW"}"
+  end
+
+  def self.nb_fmt(nb)
+    "%.2f" % nb
   end
 
   def self.g81_relative(content)
@@ -34,14 +38,14 @@ class G81Relative
 
     center = points[24]
     top_left, top_middle, top_right, middle_left,
-      middle_right, bottom_left,
-      bottom_center, bottom_right = points.values_at(0,3,6,21,27,42,45,48).map{|x| (x - center).round(2)}
+    middle_right, bottom_left,
+    bottom_center, bottom_right = points.values_at(0, 3, 6, 21, 27, 42, 45, 48).map { |x| (x - center).round(2) }
 
     %Q{
       Raw values:
-      #{top_left}\t#{top_middle}\t#{top_right}
-      #{middle_left}\t0\t#{middle_right}
-      #{bottom_left}\t#{bottom_center}\t#{bottom_right}
+      #{nb_fmt(top_left)}\t#{nb_fmt(top_middle)}\t#{nb_fmt(top_right)}
+      #{nb_fmt(middle_left)}\t0.00\t#{nb_fmt(middle_right)}
+      #{nb_fmt(bottom_left)}\t#{nb_fmt(bottom_center)}\t#{nb_fmt(bottom_right)}
       
       Degrees:
       #{convert_distance_to_degrees(top_left)}\t#{convert_distance_to_degrees(top_middle)}\t#{convert_distance_to_degrees(top_right)}

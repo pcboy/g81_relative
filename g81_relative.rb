@@ -16,14 +16,14 @@
 #  David Hagege <david.hagege@gmail.com>
 
 class G81Relative
-  def self.convertDistanceToFractionalTurns(distance)
+  def self.convert_distance_to_fractional_turns(distance)
     screw_pitch = 0.5
-    rat = Rational(distance/screw_pitch).round(1)
-    rat = rat == 0/1 ? 0 : rat
-    "#{rat.abs}#{rat > 0 ? 'CW' : 'CCW'}"
+    rat = Rational(distance / screw_pitch).round(1)
+    rat = rat == 0 / 1 ? 0 : rat
+    "#{rat.abs}#{rat > 0 ? "CW" : "CCW"}"
   end
 
-  def self.convertDistanceToDegrees(distance)
+  def self.convert_distance_to_degrees(distance)
     screw_pitch = 0.5
     deg = (distance/screw_pitch*360).round
     "#{deg.abs}°#{deg > 0 ? 'CW' : 'CCW'}"
@@ -44,14 +44,14 @@ class G81Relative
       #{bottom_left}\t#{bottom_center}\t#{bottom_right}
       
       Degrees:
-      #{convertDistanceToDegrees(top_left)}\t#{convertDistanceToDegrees(top_middle)}\t#{convertDistanceToDegrees(top_right)}
-      #{convertDistanceToDegrees(middle_left)}\t0\t#{convertDistanceToDegrees(middle_right)}
-      #{convertDistanceToDegrees(bottom_left)}\t#{convertDistanceToDegrees(bottom_center)}\t#{convertDistanceToDegrees(bottom_right)}
+      #{convert_distance_to_degrees(top_left)}\t#{convert_distance_to_degrees(top_middle)}\t#{convert_distance_to_degrees(top_right)}
+      #{convert_distance_to_degrees(middle_left)}\t0\t#{convert_distance_to_degrees(middle_right)}
+      #{convert_distance_to_degrees(bottom_left)}\t#{convert_distance_to_degrees(bottom_center)}\t#{convert_distance_to_degrees(bottom_right)}
 
       Fractional Turns:
-      #{convertDistanceToFractionalTurns(top_left)}\t#{convertDistanceToFractionalTurns(top_middle)}\t#{convertDistanceToFractionalTurns(top_right)}
-      #{convertDistanceToFractionalTurns(middle_left)}\t0\t#{convertDistanceToFractionalTurns(middle_right)}
-      #{convertDistanceToFractionalTurns(bottom_left)}\t#{convertDistanceToFractionalTurns(bottom_center)}\t#{convertDistanceToFractionalTurns(bottom_right)}
+      #{convert_distance_to_fractional_turns(top_left)}\t#{convert_distance_to_fractional_turns(top_middle)}\t#{convert_distance_to_fractional_turns(top_right)}
+      #{convert_distance_to_fractional_turns(middle_left)}\t0\t#{convert_distance_to_fractional_turns(middle_right)}
+      #{convert_distance_to_fractional_turns(bottom_left)}\t#{convert_distance_to_fractional_turns(bottom_center)}\t#{convert_distance_to_fractional_turns(bottom_right)}
     }
   end
 end

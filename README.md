@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/pcboy/g81_relative.svg?branch=master)](https://travis-ci.com/pcboy/g81_relative)
+![Build and Deploy](https://github.com/pcboy/g81_relative/workflows/Build%20and%20Deploy/badge.svg)
 
 https://github.com/PrusaOwners/prusaowners/wiki/Bed_Leveling_without_Wave_Springs
 

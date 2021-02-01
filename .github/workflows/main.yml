@@ -1,0 +1,26 @@
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2 
+        with:
+          persist-credentials: false
+      - name: Set up ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+      - name: Install, Test, and Build
+        run: |
+          yarn global add parcel
+          make
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@f8bad71bf44bc9e98b4f1a7cc52ff005129068f6
+        if: github.ref == 'refs/heads/master'
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: build # The folder the action should deploy.

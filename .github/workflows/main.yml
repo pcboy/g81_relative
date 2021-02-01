@@ -18,9 +18,9 @@ jobs:
           make
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@f8bad71bf44bc9e98b4f1a7cc52ff005129068f6
+        uses: JamesIves/github-pages-deploy-action@132898c54c57c7cc6b80eb3a89968de8fc283505
         if: github.ref == 'refs/heads/master'
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages 
+          FOLDER: build 
